@@ -19,7 +19,6 @@ description: >- # this means to ignore newlines until "baseurl:"
     This is my personal website, which I made one day on break on a whim.
     I hope you enjoy!
 baseurl: ""
-url: "https://cse.sc.edu/~jynelson"
 github_username:  jyn514
 timezone: America/New_York
 
