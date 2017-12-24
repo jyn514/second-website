@@ -15,12 +15,22 @@
 # in the templates via {{ site.myvariable }}.
 title: The website of Joshua Nelson
 email: jynelson@email.sc.edu
+author: Joshua Nelson
 description: >- # this means to ignore newlines until "baseurl:"
     This is my personal website, which I made one day on break on a whim.
     I hope you enjoy!
 baseurl: ""
 github_username:  jyn514
 timezone: America/New_York
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Joshua Nelson"
 
 # Build settings
 markdown: kramdown
