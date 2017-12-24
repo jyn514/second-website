@@ -1,9 +1,27 @@
 #!/bin/sh
 
+set -v
+
+add () {
+	FAILED="$(echo "$FAILED + $1" | bc)"
+}
+
+FAILED=0
+
 # does NOT currently exit with errors
 # travis doesn't recognize apt: for some reason
 cd "$(git rev-parse --show-toplevel)"
 travis lint --skip-completion-check
-bundle exec htmlproofer ./_site
-linklint -error -warn -net -root ./_site /@
+add $?
 
+bundle exec htmlproofer ./_site
+add $?
+
+linklint -error -warn -net -root ./_site /@
+add $?
+
+if "$FAILED"; then
+	echo "Commit failed"
+else
+	echo "Commit succeeded"
+fi
