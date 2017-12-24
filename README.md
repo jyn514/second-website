@@ -1,5 +1,12 @@
 # Second website
 
+## Status
+
+Travis-CI:  
+<a href="https://travis-ci.org/jyn514/jyn514.github.io">
+<img src="https://travis-ci.org/jyn514/jyn514.github.io.svg?branch=master">
+</a>
+
 Hello, and thanks for visiting! I enjoy talking, and I hope you enjoy listening
 :)
 
