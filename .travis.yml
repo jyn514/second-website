@@ -18,10 +18,6 @@ install:
   - gem install travis jekyll html-proofer
   - bundle install
 
-# create the site
-before_script:
-  - "bundle exec jekyll build"
-
 script:
   - "scripts/pre-commit"
 

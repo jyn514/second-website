@@ -8,6 +8,8 @@ add () {
 
 FAILED=0
 
+bundle exec jekyll build
+
 # does NOT currently exit with errors
 # travis doesn't recognize apt: for some reason
 cd "$(git rev-parse --show-toplevel)"
