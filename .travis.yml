@@ -1,0 +1,20 @@
+language: ruby
+
+os: linux
+sudo: false
+dist: trusty
+
+addons:
+  apt:
+    packages:
+    - linklint
+
+install:
+  - gem install travis bundle jekyll html-proofer
+
+script:
+  - "travis lint"
+  - "bundle exec jekyll build"
+  - "bundle exec htmlproofer ./_site"
+  - "linklint -error -warn -net -root ./_site /@"
+

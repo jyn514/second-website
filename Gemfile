@@ -25,3 +25,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Added at 2017-12-24 06:49:22 -0500 by joshua:
+gem "html-proofer", "~> 3.7"
