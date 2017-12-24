@@ -13,7 +13,7 @@ install:
   - gem install travis bundle jekyll html-proofer
 
 script:
-  - "travis lint"
+  - "travis lint -x --skip-completion-check"
   - "bundle exec jekyll build"
   - "bundle exec htmlproofer ./_site"
   - "linklint -error -warn -net -root ./_site /@"
