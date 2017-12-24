@@ -36,3 +36,6 @@ exclude:
     - Gemfile.lock
     - README.md
     - scripts
+
+include:
+    - .well-known
