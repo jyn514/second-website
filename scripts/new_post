@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]; then
+	echo "Usage: $(basename "$0") title"
+	exit 1
+fi
+
+cd /usr/local/src/second-website/_posts
+file="$(date -I)-$(echo $@ | tr ' ' '-').md"
+echo '---
+layout:	post' > "$file"
+echo "title:	\"$@\"" >> "$file"
+echo "$(date "+date:%t%Y-%m-%d %T %z")" >> "$file"
+echo '---' >> "$file"
+
