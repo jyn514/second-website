@@ -20,8 +20,11 @@ add $?
 linklint -error -warn -net -root ./_site /@
 add $?
 
-if "$FAILED"; then
-	echo "Commit failed"
+if [ "$FAILED" -ne 0 ] ; then
+	echo "Commit had $FAILED errors"
 else
 	echo "Commit succeeded"
 fi
+
+exit $FAILED
+
