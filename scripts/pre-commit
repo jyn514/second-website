@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# does NOT currently exit with errors
+# travis doesn't recognize apt: for some reason
+cd "$(git rev-parse --show-toplevel)"
+travis lint --skip-completion-check
+bundle exec htmlproofer ./_site
+linklint -error -warn -net -root ./_site /@
+

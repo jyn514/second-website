@@ -1,20 +1,27 @@
 language: ruby
 
+# minimize startup times
 os: linux
 sudo: false
 dist: trusty
 
+# don't require sudo
 addons:
   apt:
     packages:
     - linklint
 
+before_install:
+    gem install bundle
+
 install:
-  - gem install travis bundle jekyll html-proofer
+  - gem install travis jekyll html-proofer
+  - bundle install
+
+# create the site
+before_script:
+  - "bundle exec jekyll build"
 
 script:
-  - "travis lint -x --skip-completion-check"
-  - "bundle exec jekyll build"
-  - "bundle exec htmlproofer ./_site"
-  - "linklint -error -warn -net -root ./_site /@"
+  - "scripts/pre-commit"
 
