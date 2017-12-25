@@ -16,7 +16,9 @@ cd "$(git rev-parse --show-toplevel)"
 travis lint --skip-completion-check
 add $?
 
-bundle exec htmlproofer ./_site
+# Linkedin blocks robots
+bundle exec htmlproofer \
+	--url-ignore https://www.linkedin.com/in/joshuayn _site ./_site
 add $?
 
 linklint -error -warn -net -root ./_site /@
