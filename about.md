@@ -14,7 +14,7 @@ I'm originally from Tampa, FL, but my parents wanted me to
 
 >Get out of this backwater.
 >
->   -- Jeremy Nelson, ~September 2016
+>   -- Jeremy Nelson, September 2016
 
 I plan to update this site with news of my exploits.
 
