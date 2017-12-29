@@ -18,7 +18,8 @@ add $?
 
 # Linkedin blocks robots
 bundle exec htmlproofer \
-	--url-ignore https://www.linkedin.com/in/joshuayn _site ./_site
+	--url-ignore https://www.linkedin.com/in/joshuayn,http://localhost:4000 \
+	_site ./_site
 add $?
 
 linklint -error -warn -net -root ./_site /@
