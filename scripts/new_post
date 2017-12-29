@@ -7,9 +7,12 @@ fi
 
 cd /usr/local/src/second-website/_posts
 file="$(date -I)-$(echo $@ | tr ' ' '-').md"
-echo '---
-layout:	post' > "$file"
-echo "title:	\"$@\"" >> "$file"
-echo "$(date "+date:%t%Y-%m-%d %T %z")" >> "$file"
-echo '---' >> "$file"
+{ echo '---
+layout:	post'
+echo "title:	\"$@\""
+echo "$(date "+date:%t%Y-%m-%d %T %z")"
+echo "excerpt:"
+echo '---'
+} >> "$file"
 
+echo Created new post at $file
