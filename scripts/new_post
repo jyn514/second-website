@@ -1,18 +1,38 @@
 #!/bin/sh
 
-if [ $# -lt 1 ]; then
+if [ $# -eq 0 ]; then
 	echo "Usage: $(basename "$0") title"
 	exit 1
 fi
 
-cd /usr/local/src/second-website/_posts
-file="$(date -I)-$(echo $@ | tr ' ' '-').md"
-{ echo '---
-layout:	post'
-echo "title:	\"$@\""
-echo "$(date "+date:%t%Y-%m-%d %T %z")"
-echo "excerpt:"
-echo '---'
-} >> "$file"
+set -u  # undefined variables are an error
 
-echo Created new post at $file
+cd /usr/local/src/second-website/_posts
+
+TITLE="$(echo $@ | tr '\t \r' '---' | tr -d '\n').md"
+TIME="$(date "+%Y-%m-%d %T %z")"
+FILE="$(date -I)-$TITLE"
+FORMAT="---
+layout:	post
+title:	\"$@\"
+date:	$TIME
+excerpt:
+---
+"
+
+ls --quoting-style=shell-escape | grep -- "-$TITLE$" > /dev/null
+GREPSTATUS=$?
+
+touch $FILE || { echo "$FILE is not writable"; exit 1; }
+
+if [ "$GREPSTATUS" -eq 0 ]; then
+	printf "file titled $TITLE exists, updating date... "
+	if ! [ -e "$FILE" ]; then mv -f *"-$TITLE" "$FILE"; fi
+	sed -i "s/date:	.*/date:	$TIME/" $FILE
+	echo Success
+else
+	echo Creating new post at $(realpath $FILE)
+	echo "$FORMAT" >> "$FILE"
+fi
+
+exit 0
