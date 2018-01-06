@@ -30,6 +30,8 @@ as well as [an overview](https://developers.google.com/speed/public-dns/) of DNS
 - You may also want to [see if you can access IPv6 sites](https://test-ipv6.com)
 - Google has a [web interface](https://dns.google.com) for DNS lookups
 - [Run your own](http://jpmens.net/2011/10/21/automating-unbound-for-dnssec-on-your-workstation/) DNS server!
+- I've included DNSSEC testers in my own site.
+Open up the [browser console][open console] to take a look!
 
 [SO post]: https://unix.stackexchange.com/questions/90035/how-to-set-dns-resolver-in-fedora-using-network-manager
 [isp]: https://en.wikipedia.org/wiki/Internet_service_provider
@@ -40,3 +42,4 @@ as well as [an overview](https://developers.google.com/speed/public-dns/) of DNS
 [dutch DNS]: https://blog.xs4all.nl/xs4all-moet-adressen-pirate-bay-voorlopig-blokkeren/
 [dns ads]: https://blog.wired.com/27bstroke6/2008/04/isps-error-page.html
 [rfc]: https://www.ietf.org/rfc.html
+[open console]: https://webmasters.stackexchange.com/questions/8525/

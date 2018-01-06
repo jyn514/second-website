@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+<script>
+  console.info("Hi there! Thanks for visiting.")
+  console.info("You might see a few warnings pop up shortly - specifically, ERR_NAME_NOT_RESOLVED")
+  console.info("That's perfectly normal - I have a few DNSSEC testers throughout the source.")
+  console.info("If they fail to resolve, that means you're validating your DNS records. Good job!")
+  console.info("More info is available in my post: {{ site.baseurl }}{% link _posts/2018-01-06-Using-DNSSEC.md %}")
+</script>
+
+</html>

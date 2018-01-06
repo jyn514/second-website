@@ -7,6 +7,13 @@ add () {
 }
 
 FAILED=0
+IGNORED=$(echo '
+http://www.verteiltesysteme.net/r/a,
+http://www.verteiltesysteme.net/r/b,
+http://prefetch.validatorsearch.verisignlabs.com,
+https://www.linkedin.com/in/joshuayn,
+http://localhost:4000
+' | tr -d '\n')
 
 bundle exec jekyll build
 
@@ -18,7 +25,7 @@ add $?
 
 # Linkedin blocks robots
 bundle exec htmlproofer \
-	--url-ignore https://www.linkedin.com/in/joshuayn,http://localhost:4000 \
+	--url-ignore $IGNORED \
 	_site ./_site
 add $?
 
