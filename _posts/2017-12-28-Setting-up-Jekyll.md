@@ -52,7 +52,7 @@ by default; find where it is with `bundle show minima`.
 cp -r $(bundle show minima)/* <directory>
 {% endhighlight %}
 
-- CSS: `_sass/minima/` 
+- CSS: `_sass/minima/`
 - Page layouts: `_layouts/`
 - Headers and footers: `_includes/`
 - 404 page: `404.html`
@@ -60,8 +60,12 @@ cp -r $(bundle show minima)/* <directory>
 ## Creating content
 Jekyll expects a certain format from its templates. I've made an
 [script](https://github.com/jyn514/jyn514.github.io/blob/master/scripts/new_post)
-that will do it automatically for you. Just edit the resultant file,
-add it to `git`, push it to GitHub, and you'll be set!
+that will handle the metadata automatically.
+
+The content itself can be in one of three formats:
+- [Markdown](https://daringfireball.net/projects/markdown/)
+- HTML
+- Plain text
 
 The [source](https://github.com/jyn514/jyn514.github.io/)
 of my site is also available as an example.
