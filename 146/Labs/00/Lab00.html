@@ -1,0 +1,377 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>Lab 00</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:20.0pt'>Lab 00</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:20.0pt'>Mine Counter!</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:20.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b>Objective:</b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Write a program that creates a 10x10 multi-dimensional
+array, places 10 mines in random locations on the board, and finally counts the
+number of mines an empty space is surrounded by using its neighboring 8
+squares.  For reference this works similarly to functionality in the game “Minesweeper”. 
+Then finally demonstrate that the program can create an empty board, populate
+it with mines, and finally count mines.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=85 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:red;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='color:white'>*</span></p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=85 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:yellow;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>3</p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:red;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='color:white'>*</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=85 valign=top style='width:63.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:red;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='color:white'>*</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The example above shows the center squares value is based on
+the number of mines (“*”) that surrounds its 8 neighbors.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Tips and Hints: </b></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><b>import java.util.Random;</b></li>
+ <li class=MsoNormal><b>Make sure exactly 10 mines are placed in the board.  If
+     a mine already exists in that space then randomly pick another space until
+     there are 10. This may require a loop.</b></li>
+ <li class=MsoNormal><b>Separating each of the functionalities required into
+     multiple methods may be extremely beneficial.</b></li>
+ <li class=MsoNormal><b>A multi-dimensional array of enums, Strings, or even
+     ints can solve this problem.</b></li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Example Dialog:</b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>Creating empty board</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>Placing mines</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>*-----*---</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----*-----</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>-----****-</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>-*--------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----*-----</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>--------*-</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>Performing mine count</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>0000000000</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>1100011100</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>*10112*100</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>1101*44421</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>00012****1</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>1110123321</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>1*11110000</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>1111*10000</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>0001110111</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>00000001*1</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b>Another Example Dialog:</b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>Creating empty board</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>Placing mines</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>--------*-</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>--*-----**</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>-----*----</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>--------*-</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>--**------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>------**--</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>----------</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>Performing mine count</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>00000001*1</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>0111000233</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>01*11111**</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>01111*1233</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>00001111*1</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>0122100111</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>01**112210</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>012211**10</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>0000012210</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Courier New";
+color:#333399'>0000000000</span></b></p>
+
+<p class=MsoNormal><b>Lab Report Questions:</b></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal>Is it possible to change the size of a standard array in
+     java after it has been constructed?</li>
+ <li class=MsoNormal>A multidimensional array can be thought of an array of
+     arrays.  In java, does each array of another have to be the same size or
+     does java support ragged arrays?</li>
+</ol>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Finally:</b></p>
+
+<p class=MsoNormal>Upload the .java file to the dropbox</p>
+
+</div>
+
+</body>
+
+</html>
