@@ -4,8 +4,8 @@ title: About
 permalink: /about/
 ---
 
+## Me
 I am a student studying Computer Science at the [University of South Carolina][usc].
-This is the [second website][website source] I have built; the first is still available on [Github][first website].
 
 I'm interested in [cyber security][cs specialization], a minor in [math][math bulletin],
 and various parts of the world of computing.
@@ -16,7 +16,48 @@ I'm originally from Tampa, FL, but my parents wanted me to
 >
 >   -- Jeremy Nelson, September 2016
 
+
+## This site
+This is the [second website][website source] I have built; the first is still available on [Github][first website].
+This site emerged as a 'Keep up with the Jones' sort of project.
+My previous website was . . . [ugly][first website].
+This one is much nicer, although for now it lacks much of the content.
+
+See also [The Blog of Charles Daniels](http://cdaniels.net/),
+who inspired me to create this site.
+
 I plan to update this site with news of my exploits.
+
+## FAQs
+These questions are not frequently asked. I normally get questions like
+- How was your break?
+- Hey, how do you do this computing assignment? I'm confused.
+
+These are the questions I wish people would ask.
+
+> How can I learn more about computers?
+
+Lots of ways! I have a list of [links](https://github.com/jyn514/resources) just for this.
+The basic ways:
+    - [Practice](https://www.hackerrank.com/dashboard)
+    - [Google](https://www.google.com/)!
+    - [Wikipedia](https://www.wikipedia.org/)
+More FAQs about this [here](https://www.reddit.com/r/learnprogramming/wiki/faq).
+
+> How can I learn about the history of computing?
+
+I recommend starting [here](http://catb.org/~esr/writings).
+Eric Raymond is somewhat prominent for his great work in the open source community.
+
+> That's a nice profile picture! Where was it taken?
+
+[The University of Tampa](https://www.ut.edu/)
+
+> How can I start my own website?
+
+I recommend using [GitHub pages](https://pages.github.com/). I have a 
+[tutorial]({{ site.baseurl }}{% link _posts/2017-12-28-Setting-up-Jekyll.md %})
+for how to use Jekyll, the templating manager on the Pages backend.
 
 [usc]: https://sc.edu
 [first website]: https://github.com/jyn514/first-website
