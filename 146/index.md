@@ -4,10 +4,6 @@ title: CSCE 146
 permalink: /146/
 ---
 
-{% loop_directory iterator:146 sort:descending %}
- <a href="{{ 146 }}">{{ 146 }}</a>
-{% endloop_directory %}
-
     146
     ├── Extra Credit
     │   ├── 1
