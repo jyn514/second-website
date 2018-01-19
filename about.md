@@ -39,9 +39,11 @@ These are the questions I wish people would ask.
 
 Lots of ways! I have a list of [links](https://github.com/jyn514/resources) just for this.
 The basic ways:
-    - [Practice](https://www.hackerrank.com/dashboard)
-    - [Google](https://www.google.com/)!
-    - [Wikipedia](https://www.wikipedia.org/)
+
+- [Practice](https://www.hackerrank.com/dashboard)
+- [Google](https://www.google.com/)!
+- [Wikipedia](https://www.wikipedia.org/)
+
 More FAQs about this [here](https://www.reddit.com/r/learnprogramming/wiki/faq).
 
 > How can I learn about the history of computing?
