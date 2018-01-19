@@ -17,6 +17,12 @@
             {% if site.email %}
             <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {% endif %}
+            {% if site.public_key %}
+            <li>{% include icon-gnupg.html key=site.public_key %}</li>{% endif %}
+            {% if site.resume %}
+            <li><a href="{{ site.baseurl }}{{ site.resume }}">Resume</a>
+            {% endif %}
+
         </ul>
       </div>
 
@@ -33,9 +39,6 @@
 
           {% if site.linkedin_username %}
           <li>{% include icon-linkedin.html username=site.linkedin_username %}</li>{% endif %}
-          
-          {% if site.public_key %}
-          <li>{% include icon-gnupg.html key=site.public_key %}</li>{% endif %}
 
         </ul>
       </div>

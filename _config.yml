@@ -10,6 +10,7 @@ description: >- # this means to ignore newlines until "baseurl:"
     This is my personal website, which I made over break on a whim.
     I hope you enjoy!
 baseurl: ""
+resume: Resume.pdf
 github_username:  jyn514
 keybase_username: jyn514
 linkedin_username:  joshuayn
