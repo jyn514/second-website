@@ -2,6 +2,7 @@
 layout: post
 title:  "Hello, World!"
 date:   2017-12-23 17:58:31 -0500
+excerpt: "Hello, World!"
 ---
 **Hello, World!**
 
