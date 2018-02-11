@@ -29,7 +29,7 @@ I'm originally from Tampa, FL, but my parents wanted me to
 
 ### Things I enjoy
 - Music
-    - [Pink Floyd](https://www.youtube.com/playlist?list=PLEQdwrAGbxncZFLH4KETau3-uncnqVtWD)
+    - [Pink Floyd](http://www.pinkfloyd.com/)
     - [Cage the Elephant](https://cagetheelephant.com/)
     - [The Monkees](http://monkees.com/)
 - Reddit
@@ -63,6 +63,9 @@ and [Programming languages](https://en.wikipedia.org/wiki/Programming_language)]
 because [it's stupid](https://en.wikipedia.org/wiki/Illegal_number).
 
 ### Things I find moving
+- [Black Mirror](https://en.wikipedia.org/wiki/Black_Mirror),
+especially [White Christmas](https://en.wikipedia.org/wiki/White_Christmas_(Black_Mirror))
+(warning: this *will* make you cry/stop watching/give up on technology and move to Tasmania)
 - [The Last Dragon](https://en.wikipedia.org/wiki/The_Last_Dragon_(novel))
 - [Life Is Strange](https://www.lifeisstrange.com/en-us)
 - [Use of Weapons](https://www.goodreads.com/book/show/12007.Use_of_Weapons)
