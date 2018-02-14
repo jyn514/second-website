@@ -1,10 +1,11 @@
 ---
 layout:	post
-title:	"Using GPG"
-date:	2017-12-23 23:13:01 -0500
+title:	"Using PGP Keys"
+date:	2018-02-11 22:26:24 -0500
+excerpt:	Why and How to use encryption
 ---
 
-## What is GPG?
+# What is GPG?
 
 [GPG][gpg homepage] is a program for encrypting your files, including
 - Documents
@@ -26,6 +27,7 @@ are only visible to you, and that the site has not [been changed in transit][com
 Cryptography therefore has two major functions:
 - To encrypt data: to make sure only people you choose can read it, and
 - To sign data: to ensure that information you read has not been altered by third parties.
+
 
 ## How do I get GPG?
 
@@ -51,12 +53,12 @@ In order to take full advantage, you'll need to
 You need a [passphrase](https://whatisapassphrase.com/) to use a GPG key.
 This prevents anyone from using your key.
 
-{% highlight sh %} gpg --quick-gen-key "Joe Shmoe <joe@example.email.com>" {% endhighlight %}
+{% highlight sh %} gpg --quick-gen-key "Joe Shmoe <joe@email.example.com>" {% endhighlight %}
 Enter your passphrase into the prompt that pops up.
 
 ### Publish your key
 {% highlight sh %}
-gpg --send-key $(gpg -K | head -4 | tail -1 | tr -d ' \t')
+gpg --send-keys
 {% endhighlight %}
 
 ### Start signing things
@@ -69,29 +71,32 @@ gpg --send-key $(gpg -K | head -4 | tail -1 | tr -d ' \t')
     * [K9mail](https://k9mail.github.io/) and [OpenKeychain](https://openkeychain.org/)
     for Android
     * [Mutt](https://gnupg.org/software/swlist.html#mutt) for the terminal
+- Join [Keybase](https://keybase.io/)
 
 ## More information
 - [GPG handbook](https://www.gnupg.org/gph/en/manual/book1.html)
 - [More frontends](https://gnupg.org/software/frontends.html)
 - [A much more thorough explanation](http://www.glump.net/content/gpg_intro/)
-
+- [Homepage](https://www.openpgp.org/)
+- [GPG homepage](https://gnupg.org/)
+- [FSF](https://emailselfdefense.fsf.org/en/) on email self-defense
 
 ## Appendix
 ### Prompts are repeated
 Note that the following prompt appears *twice* when you generate a key:
 
-{% highlight sh %}
+```
 We need to generate a lot of random bytes.
 It is a good idea to perform some other action (type on the keyboard,
 move the mouse, utilize the disks) during the prime generation;
 this gives the random number generator a better chance to gain enough entropy.
-{% endhighlight %}
+```
 
 This is because there are actually two keys being generated:
 1 private key and 1 public. The private you will store on your computer
 securely. The public you will upload to a keyserver for anyone to see.
 
-### What if I'm not confortable with shell quoting?
+### What if I'm not comfortable with shell quoting?
 Use {% highlight sh %} gpg --gen-key {% endhighlight %} or
 {% highlight sh %} gpg --full-gen-key {% endhighlight %}
 
