@@ -97,7 +97,7 @@ More FAQs about this [here](https://www.reddit.com/r/learnprogramming/wiki/faq).
 
 > How can I learn about the history of computing?
 
-I recommend starting [here](http://catb.org/~esr/writings).
+I recommend starting [here](http://www.catb.org/~esr/writings/).
 Eric Raymond is somewhat prominent for his great work in the open source community.
 
 > That's a nice profile picture! Where was it taken?

@@ -76,7 +76,7 @@ gpg --send-keys
 ## More information
 - [GPG handbook](https://www.gnupg.org/gph/en/manual/book1.html)
 - [More frontends](https://gnupg.org/software/frontends.html)
-- [A much more thorough explanation](http://www.glump.net/content/gpg_intro/)
+- [A much more thorough explanation](https://www.glump.net/howto/cryptography/practical-introduction-to-gnu-privacy-guard-in-windows)
 - [Homepage](https://www.openpgp.org/)
 - [GPG homepage](https://gnupg.org/)
 - [FSF](https://emailselfdefense.fsf.org/en/) on email self-defense

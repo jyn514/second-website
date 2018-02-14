@@ -29,7 +29,7 @@ as well as [an overview](https://developers.google.com/speed/public-dns/) of DNS
 
 - You may also want to [see if you can access IPv6 sites](https://test-ipv6.com)
 - Google has a [web interface](https://dns.google.com) for DNS lookups
-- [Run your own](http://jpmens.net/2011/10/21/automating-unbound-for-dnssec-on-your-workstation/) DNS server!
+- [Run your own](https://jpmens.net/2011/10/21/automating-unbound-for-dnssec-on-your-workstation/) DNS server!
 - I've included DNSSEC testers in my own site.
 Open up the [browser console][open console] to take a look!
 
