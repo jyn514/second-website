@@ -5,8 +5,8 @@
     {% assign page_paths = site.header_pages | default: default_paths %}
     <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     <!-- more DNSSEC tests -->
-    <img src="//www.verteiltesysteme.net/r/a" alt="" height="1" width="1" />
-    <img src="//www.verteiltesysteme.net/r/b" alt="" height="1" width="1" onerror="this.style.visibility='hidden';" />
+    <img src="//www.verteiltesysteme.net/r/a" alt="" height="0" width="0" />
+    <img src="//www.verteiltesysteme.net/r/b" alt="" height="0" width="0" onerror="this.style.visibility='hidden';" />
 
     {% if page_paths %}
       <nav class="site-nav">
