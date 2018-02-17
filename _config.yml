@@ -3,6 +3,7 @@
 # See https://jekyllrb.com/docs/configuration/ for docs
 
 # Site settings, accessible through {{ site.<variable> }}
+lang: "en"
 title: The website of Joshua Nelson
 email: jyn514@gmail.com
 author: Joshua Nelson
