@@ -2,7 +2,7 @@
 
 ## Status
 
-Travis-CI:  
+Travis-CI:
 <a href="https://travis-ci.org/jyn514/jyn514.github.io">
 <img src="https://travis-ci.org/jyn514/jyn514.github.io.svg?branch=master">
 </a>
@@ -15,6 +15,9 @@ Hello, and thanks for visiting! I enjoy talking, and I hope you enjoy listening
 1. Install jekyll with `gem install jekyll`
 	- Instructions for gem are available [here][ruby]
 2. Run `jekyll build`. All set!
+
+## Running
+`bundle exec jekyll serve`
 
 ## Contributing
 
