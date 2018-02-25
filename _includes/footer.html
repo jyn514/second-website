@@ -20,7 +20,7 @@
             {% if site.public_key %}
             <li>{% include icon-gnupg.html key=site.public_key %}</li>{% endif %}
             {% if site.resume %}
-            <li><a href="/Resume.pdf">Resume</a>
+            <li><a href="{{ site.base_url }}{% link /assets/Resume.pdf %}">Resume</a>
             {% endif %}
 
         </ul>
