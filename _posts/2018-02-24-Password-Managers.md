@@ -64,7 +64,7 @@ or [MiniKeePass](https://itunes.apple.com/us/app/minikeepass/id451661808?mt=8)
 [encrypt spreadsheet]: https://support.office.com/en-us/article/Protect-an-Excel-file-7359d4ae-7213-4ac2-b058-f75e9311b599
 [ddg browser passwords]: https://duckduckgo.com/?q=browser+manage+password+saving
 [keepass aes]: https://keepass.info/help/base/security.html
-[source zip]: https://sourceforge.net/projects/keepass/files/KeePass%202.x/2.38/KeePass-2.38-Source.zip/download
+[source zip]: https://keepass.info/download.html
 [wiki derivatives]: https://en.wikipedia.org/wiki/KeePass#Unofficial_KeePass_derivatives
 [xc]: https://keepassxc.org/
 [totp]: https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm
