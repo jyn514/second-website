@@ -8,10 +8,15 @@ FAILED=0
 # Linkedin blocks robots
 # prefetch fails if DNSSEC available
 # localhost is not a link, it just looks like one
+# others aren't checked properly by travis
 IGNORED=$(echo '
 http://prefetch.validatorsearch.verisignlabs.com,
 https://www.linkedin.com/in/joshuayn,
-http://localhost:4000
+/localhost/,
+https://danluu.com/octopress-speedup/,
+https://haveibeenpwned.com/,
+https://openkeychain.org/,
+https://emailselfdefense.fsf.org/en/,
 ' | tr -d '\n')
 
 cd "$(git rev-parse --show-toplevel)"
@@ -25,7 +30,7 @@ travis lint --skip-completion-check
 add $?
 
 bundle exec htmlproofer \
-	--url-ignore $IGNORED \
+	--url-ignore "$IGNORED" \
 	--check-favicon --check-html --report-missing-names --report-script-embeds \
 	./_site
 add $?
