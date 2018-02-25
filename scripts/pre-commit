@@ -8,15 +8,10 @@ FAILED=0
 # Linkedin blocks robots
 # prefetch fails if DNSSEC available
 # localhost is not a link, it just looks like one
-# others aren't checked properly by travis
 IGNORED=$(echo '
 http://prefetch.validatorsearch.verisignlabs.com,
 https://www.linkedin.com/in/joshuayn,
 /localhost/,
-https://danluu.com/octopress-speedup/,
-https://haveibeenpwned.com/,
-https://openkeychain.org/,
-https://emailselfdefense.fsf.org/en/,
 ' | tr -d '\n')
 
 cd "$(git rev-parse --show-toplevel)"

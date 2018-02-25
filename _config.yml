@@ -40,6 +40,7 @@ exclude:
     - Gemfile.lock
     - README.md
     - scripts
+    - vendor
 
 include:
     - .well-known
