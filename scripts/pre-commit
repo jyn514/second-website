@@ -1,32 +1,33 @@
 #!/bin/sh
 
-set -v
-
 add () {
 	FAILED="$(echo "$FAILED + $1" | bc)"
 }
 
 FAILED=0
+# Linkedin blocks robots
+# prefetch fails if DNSSEC available
+# localhost is not a link, it just looks like one
 IGNORED=$(echo '
-http://www.verteiltesysteme.net/r/a,
-http://www.verteiltesysteme.net/r/b,
 http://prefetch.validatorsearch.verisignlabs.com,
 https://www.linkedin.com/in/joshuayn,
 http://localhost:4000
 ' | tr -d '\n')
 
-bundle exec jekyll build
-
-# does NOT currently exit with errors
-# travis doesn't recognize apt: for some reason
 cd "$(git rev-parse --show-toplevel)"
+if ! bundle exec jekyll build; then
+   echo "PANIC: Failed to build site"
+   exit 1
+fi
+
+# does NOT currently exit with errors: travis doesn't recognize apt for some reason
 travis lint --skip-completion-check
 add $?
 
-# Linkedin blocks robots
 bundle exec htmlproofer \
 	--url-ignore $IGNORED \
-	_site ./_site
+	--check-favicon --check-html --report-missing-names --report-script-embeds \
+	./_site
 add $?
 
 linklint -error -warn -net -root ./_site /@
