@@ -16,6 +16,7 @@ FORMAT="---
 layout:	post
 title:	\"$@\"
 date:	$TIME
+audience: everyone
 excerpt:
 ---
 "

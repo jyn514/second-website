@@ -3,6 +3,7 @@ layout:	post
 title:	"Using PGP Keys"
 date:	2018-02-11 22:26:24 -0500
 excerpt:	Why and How to use encryption
+audience: developers
 ---
 
 # What is GPG?

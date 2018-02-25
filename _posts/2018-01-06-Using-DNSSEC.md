@@ -3,6 +3,7 @@ layout:	post
 title:	"Using DNSSEC"
 date:	2018-01-06 15:12:51 -0500
 excerpt: How and why to enable DNSSEC
+audience: tech-savvy
 ---
 
 I was on StackOverflow the other day when I saw
