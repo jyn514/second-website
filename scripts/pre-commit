@@ -35,9 +35,6 @@ bundle exec htmlproofer \
 	./_site
 add $?
 
-linklint -error -warn -net -root ./_site /@
-add $?
-
 if [ "$FAILED" -ne 0 ] ; then
 	echo "Commit had $FAILED errors"
 else

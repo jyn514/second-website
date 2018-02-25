@@ -1,20 +1,16 @@
 language: ruby
 
 # minimize startup times
-os: linux
 sudo: false
 
-# don't require sudo
+# don't require sudo for installs
 addons:
   apt:
     packages:
-    - linklint
+    - libcurl4-openssl-dev # required to avoid SSL errors
 
 before_install:
-    gem install bundle
-
-install:
-  - bundle install
+    gem install bundle travis
 
 script:
   - "scripts/pre-commit"
