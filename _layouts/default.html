@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
   {% include head.html %}
-
-  <body>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+<body>
 
     {% include header.html %}
 
@@ -15,11 +14,8 @@
 
     {% include footer.html %}
 
-  </body>
-
-<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 <script>
   console.info("Hi there! Thanks for visiting.")
 </script>
-
+</body>
 </html>
