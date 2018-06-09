@@ -62,12 +62,13 @@ I'm originally from Tampa, FL, but my parents wanted me to
 
 ### Things I find interesting
 - [The Culture](https://www.iain-banks.net/books/#culture) series
-- [Chaos Theory](https://www.reddit.com/r/dataisbeautiful/comments/7ve4i8)
+- [Chaos Theory](https://www.reddit.com/r/dataisbeautiful/comments/7ve4i8) and [The Chaos Chronicles](https://www.starrigger.net/books/chaos/)
 - [Formal logic](https://en.wikipedia.org/wiki/Mathematical_logic)
 - [POSIX computer systems](https://en.wikipedia.org/wiki/POSIX)
 - [Web pages](https://en.wikipedia.org/wiki/HTML)
 - [Compilers](https://en.wikipedia.org/wiki/Compiler)
 and [Programming languages](https://en.wikipedia.org/wiki/Programming_language)]
+- [Unsong](https://unsongbook.com/)
 
 ### Things I reject
 - [Social media](https://en.wikipedia.org/wiki/Social_media#Criticisms)
