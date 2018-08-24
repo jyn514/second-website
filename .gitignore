@@ -1,4 +1,6 @@
 _site
+vendor
 .sass-cache
+.bundle
 .jekyll-metadata
 *.kate-swp
