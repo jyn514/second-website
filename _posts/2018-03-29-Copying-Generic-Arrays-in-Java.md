@@ -57,7 +57,7 @@ Java has [type erasure](https://docs.oracle.com/javase/tutorial/java/generics/er
 Now we get to the strange part of this post.
 
 {% highlight java %}
-class copy<T> {
+class Copy<T> {
     private final T[] array;
     copy(T[] array) {
         this.array = array;
