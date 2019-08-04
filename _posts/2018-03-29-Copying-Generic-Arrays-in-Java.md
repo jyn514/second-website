@@ -29,19 +29,19 @@ you need a new third array in which to store the result.
 Only one problem: Java doesn't allow generic arrays to be created.
 Trying to do so is a compile-time error:
 {% highlight java %}
-class generic<T> {
-    generic () {
+class Generic<T> {
+    Generic () {
         System.out.println(new T[0]);
     }
 
     public static void main(String[] args) {
-        new generic<String>();
+        new Generic<String>();
     }
 }
 {% endhighlight %}
 {% highlight sh %}
- % javac generic.java
-generic2.java:3: error: generic array creation
+ % javac Generic.java
+Generic.java:3: error: generic array creation
         System.out.println(new T[0]);
                            ^
 1 error
@@ -57,9 +57,9 @@ Java has [type erasure](https://docs.oracle.com/javase/tutorial/java/generics/er
 Now we get to the strange part of this post.
 
 {% highlight java %}
-class copy<T> {
+class Copy<T> {
     private final T[] array;
-    copy(T[] array) {
+    Copy(T[] array) {
         this.array = array;
     }
 
@@ -72,7 +72,7 @@ class copy<T> {
     }
 
     public static void main(String[] args) {
-        Integer[] arr = new copy<Integer>(new Integer[] {1, 2, 3}).getNew();
+        Integer[] arr = new Copy<Integer>(new Integer[] {1, 2, 3}).getNew();
     }
 }
 {% endhighlight %}
@@ -104,11 +104,11 @@ If you don't, you can (in this particular case) return a null pointer,
 since the array must be empty.
 {% highlight java %}
  % cat copy.java
-class copy<T> {
+class Copy<T> {
 
     private final T[] array;
 
-    copy(T[] array) {
+    Copy(T[] array) {
         this.array = array;
     }
 
@@ -124,7 +124,7 @@ class copy<T> {
     }
 
     public static void main(String[] args) {
-        System.out.println(new copy<Integer>(new Integer[] {1, 2, 3}).getNew());
+        System.out.println(new Copy<Integer>(new Integer[] {1, 2, 3}).getNew());
     }
 }
 {% endhighlight %}
