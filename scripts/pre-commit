@@ -17,15 +17,14 @@ https://www.linkedin.com/in/joshuayn,
 ' | tr -d '\n')
 
 cd "$(git rev-parse --show-toplevel)"
-if ! bundle exec jekyll build; then
+if ! jekyll build; then
    echo "PANIC: Failed to build site"
    exit 1
 fi
 
-# does NOT currently exit with errors: travis doesn't recognize apt for some reason
-travis lint --skip-completion-check || add 1
+travis lint --skip-completion-check
 
-bundle exec htmlproofer \
+htmlproofer \
 	--url-ignore "$IGNORED" \
 	--check-favicon --check-html --report-missing-names --report-script-embeds \
 	./_site \

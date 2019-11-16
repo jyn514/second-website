@@ -1,8 +1,5 @@
 language: ruby
 
-# minimize startup times
-sudo: false
-
 # don't require sudo for installs
 addons:
   apt:
