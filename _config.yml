@@ -19,15 +19,24 @@ linkedin_username:  joshuayn
 public_key: E655823D8D8B1088
 timezone: America/New_York
 
+collections:
+    talks:
+        output: true
+
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
       author: "Joshua Nelson"
       audience: "everyone"
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      author: "Joshua Nelson"
+      audience: "developers"
 
 # Build settings
 markdown: kramdown
