@@ -155,6 +155,7 @@ ok no actually one more thing —
 
 can I talk for a second about how absolutely *awful* every error message I've quoted here is. they are so bad I don't even refer to them when explaining what went wrong.
 half the time they point you to completely the wrong solution; the other half they give no indication at all of why something went wrong.
+
 this is not how it should be. things can be better. here is an error message for the "push after rebase" that is actually useful:
 
 ```
