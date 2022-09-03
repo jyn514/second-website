@@ -36,6 +36,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
 This is totally normal. Git just gives absolutely awful error messages. Run `git push --force-with-lease` and it should work fine.
+
 Be careful using `--force`. 99% of the time it works. The other 1% someone else pushed to your branch and you just deleted their work. They will not be happy.
 
 ## wait but I ran git pull before I looked at your blog now what do I do???
@@ -75,7 +76,7 @@ Everything is fine. All your work is still here. You just need to figure out wha
 
 DO NOT DO THIS IF YOU HAVE WORK YOU WANT TO SAVE
 
-Run `git checkout --force $(git rev-parse --abbrev-ref origin/HEAD)`. If that gives an error for any reason try `origin/master `or `origin/main` instead. If none of those work IDK what to tell you maybe wiping the repo is the best idea after all. Good luck.
+Run `git checkout --force $(git rev-parse --abbrev-ref origin/HEAD)`. If that gives an error for any reason try `git checkout --force origin/master `or `origin/main` instead. If none of those work IDK what to tell you maybe wiping the repo is the best idea after all. Good luck.
 
 #### I have work I want to save please help me fix this I have a deadline in an hour
 
