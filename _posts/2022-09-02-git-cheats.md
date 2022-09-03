@@ -74,7 +74,7 @@ Everything is fine. All your work is still here. You just need to figure out wha
 
 #### I don't care about any of the work I've done in the last day I just want a git repo that works I will wipe this directory if you don't help
 
-DO NOT DO THIS IF YOU HAVE WORK YOU WANT TO SAVE
+**DO NOT DO THIS IF YOU HAVE WORK YOU WANT TO SAVE!!!**
 
 Run `git checkout --force $(git rev-parse --abbrev-ref origin/HEAD)`. If that gives an error for any reason try `git checkout --force origin/master `or `origin/main` instead. If none of those work IDK what to tell you maybe wiping the repo is the best idea after all. Good luck.
 
@@ -110,7 +110,7 @@ There are three things I can think of that could be going wrong here:
 1. You made some changes and didn't commit them. Commit them now. Go. Do it. `git add src/tools/rls && git commit`.
 2. This is in a submodule and git got confused. If you don't know what a submodule is, mentally replace it with "code I have never modified and will never want to modify". You can ignore this by running `git deinit -f src/tools/rls` (or whichever directory the submodule starts in - you can check with `git submodule status`).
 
-   DO NOT DO THIS if you have made changes to that directory you want to save. Git will destroy all you hold dear. It is a sharp and powerful tool. You might call it ... a subtle knife.
+   **DO NOT DO THIS** if you have made changes to that directory you want to save. Git will destroy all you hold dear. It is a sharp and powerful tool. You might call it ... a subtle knife.
 
 3. This used to be a submodule and it's no longer a submodule. You tried the `deinit` thing above and it didn't help. Try `rm -rf src/tools/rls`. This does exactly what it looks like, don't do it if you want to save your work.
 
@@ -127,6 +127,46 @@ Under the hood this is running the equivalent of `git submodule update --init --
 
 sucks to be you
 
+## I made a commit and then I realized I want to make more changes but also people getting annoyed when I add lots of commits what do I do
+
+First make your changes. Then run `git add .`
+
+If you want to change the latest commit you made, run `git commit --amend`.
+
+If you want to change an earlier commit, run `git commit --fixup <earlier commit> && git rebase -i --autosquash <earlier commit>~`. Type the `~` literally but remove the `<>`.
+
+If you don't know which commit you want to change, but you know it's a commit you made since you made this branch, install
+<https://github.com/tummychow/git-absorb/> then run the `autosquash` command from above. Absorb does magic to pick the right commits.
+
+If you want to change a commit that's already on master, don't. Just don't.
+If you're *really*, *truly* convinced you need to, and you're *sure* no one else minds (which in practice is probably never true), you can use <https://github.com/newren/git-filter-repo>.
+
+## I made a merge commit but now someone is telling me merge commits aren't allowed how do I fix this?? please I already spent 3 hours on this I don't want to spend 3 more
+
+Run `git rebase -i $(git rev-parse --abbrev-ref origin/HEAD)` (or whatever your default branch is). Then go up to the bit about "failed to push some refs" above.
+
+Yes this will probably cause conflicts. No I don't know how to avoid that, probably some nonsense with `git reset $(git merge-base $(git rev-parse --abbrev-ref origin/HEAD)) && git add . && git commit` or whatever. Don't blame me if that doesn't work, I didn't test it. Also it throws away all the history, you keep the work but not the commit messages, you have to fish them up again with `git reflog` or `git for-each-ref --sort=committerdate refs/heads/ | tail -n1 | cut -d' ' -f1 | xargs git log`.
+
 ## AAA
 
 yeah no that's it have fun kid
+
+ok no actually one more thing —
+
+can I talk for a second about how absolutely *awful* every error message I've quoted here is. they are so bad I don't even refer to them when explaining what went wrong.
+half the time they point you to completely the wrong solution; the other half they give no indication at all of why something went wrong.
+this is not how it should be. things can be better. here is an error message for the "push after rebase" that is actually useful:
+
+```
+$ git push
+To git@github.com:jyn514/rust.git (simplify-storage -> origin/simplify-storage)
+error: failed to push 1 commit to 'origin'
+hint: Both your current branch and the remote branch have changed since the last time you pushed changes.
+hint: The commits locally and in your remote have the same descriptions, and you just finished a rebase.
+hint: If you want to overwrite the commits on the remote, use 'git push --force-with-lease' to push.
+note: See https://git-scm.com/book/en/v2/Git-Branching-Rebasing for more information about rebasing.
+```
+
+See how that's helpful? see how you understand more after reading it than before? unlike the absolutely useless error before
+
+god ok that's it for real I'm done now
