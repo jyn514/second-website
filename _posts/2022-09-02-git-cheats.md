@@ -171,3 +171,10 @@ note: See https://git-scm.com/book/en/v2/Git-Branching-Rebasing for more informa
 See how that's helpful? see how you understand more after reading it than before? unlike the absolutely useless error before
 
 god ok that's it for real I'm done now
+
+
+### update now that this is apparently popular
+
+go read https://rustc-dev-guide.rust-lang.org/git.html too, it's the most comprehensive document on rebase workflows that I've seen. no the official docs don't count, if you don't explain the common errors you run into it's not comprehensive. also the manpages are useless unless you already know what the command does in which case WHAT WAS THE POINT OF THE MAN PAGE
+
+also go read my twitter where you can read more nonsense like me complaining about how I can't convince myself to go to sleep <https://twitter.com/joshuayn514/>
