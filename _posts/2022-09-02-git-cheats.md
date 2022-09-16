@@ -108,7 +108,7 @@ fatal: could not move back to 9ba169a73acfa9c9875b76eec09e9a91cc6246df
 There are three things I can think of that could be going wrong here:
 
 1. You made some changes and didn't commit them. Commit them now. Go. Do it. `git add src/tools/rls && git commit`.
-2. This is in a submodule and git got confused. If you don't know what a submodule is, mentally replace it with "code I have never modified and will never want to modify". You can ignore this by running `git deinit -f src/tools/rls` (or whichever directory the submodule starts in - you can check with `git submodule status`).
+2. This is in a submodule and git got confused. If you don't know what a submodule is, mentally replace it with "code I have never modified and will never want to modify". You can ignore this by running `git submodule deinit -f src/tools/rls` (or whichever directory the submodule starts in - you can check with `git submodule status`).
 
    **DO NOT DO THIS** if you have made changes to that directory you want to save. Git will destroy all you hold dear. It is a sharp and powerful tool. You might call it ... a subtle knife.
 
