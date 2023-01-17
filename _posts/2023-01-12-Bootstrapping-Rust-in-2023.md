@@ -7,7 +7,7 @@ excerpt: Goals for improving Rust's build system and making it easier to underst
 ---
 
 *This post will assume you have watched <https://www.youtube.com/watch?v=oUIjG-y4zaA>.
-You may also find it helpful to read https://rustc-dev-guide.rust-lang.org/building/bootstrapping.html#stages-of-bootstrapping, but I won't assume prior knowledge of the information there.*
+You may also find it helpful to read <https://rustc-dev-guide.rust-lang.org/building/bootstrapping.html#stages-of-bootstrapping>, but I won't assume prior knowledge of the information there.*
 
 <!-- This is a post about how I would like Rust's bootstrapping system to work in an ideal world. -->
 <!-- I am not sure all these changes are feasible - they certainly can be done at a technical -->
@@ -23,16 +23,16 @@ engineers who have used staged compilers in the past. Here are some theories I h
 
 #### What do other compilers call "stage 0"?
 
-https://gcc.gnu.org/install/build.html refers to a "3-stage" build, and names the stages "stage1", "stage2", "stage3".
+<https://gcc.gnu.org/install/build.html> refers to a "3-stage" build, and names the stages "stage1", "stage2", "stage3".
 It also references a "native compiler". As far as I can tell, "native compiler" corresponds to what Rust calls "stage 0", and stage 1/2/3 are all exactly equivalent, i.e:
 - stage0 is a pre-existing compiler, which is assumed to already exist (or in rust's case, a downloaded beta compiler).
 - stage1 is the sources from latest master, built by stage0, and has a different ABI from stage2 and stage3.
 - stage2 is the same sources, built by stage1.
 - stage3 is byte-for-byte identical with stage2, only useful for verifying reproducible builds.
 
-https://llvm.org/docs/AdvancedBuilds.html#bootstrap-builds says "In a simple two-stage bootstrap build, we build clang using the system compiler, then use that just-built clang to build clang again." which again seems to match GCC and Rust.
+<https://llvm.org/docs/AdvancedBuilds.html#bootstrap-builds> says "In a simple two-stage bootstrap build, we build clang using the system compiler, then use that just-built clang to build clang again." which again seems to match GCC and Rust.
 
-https://gitlab.haskell.org/ghc/ghc/blob/master/hadrian/README.md#staged-compilation seems to match GCC, Clang, and Rust.
+<https://gitlab.haskell.org/ghc/ghc/blob/master/hadrian/README.md#staged-compilation> seems to match GCC, Clang, and Rust.
 
 <!-- TOOD: mention that there are other self-hosted compilers that don't use stages? would make it clear that having "too close" a model to other compilers is confusing -->
 
@@ -86,7 +86,7 @@ Supporting two versions is not an intrinsic requirement. We do it for two reason
 
 1 is "just" implementation work to fix: if there are no changes to the compiler, we can download CI artifacts for that commit and use those instead. There are [a few bugs to fix](https://github.com/rust-lang/rust/issues/81930) but they're surmountable.
 
-2 is harder. Either we add `cfg(bootstrap)` to the compiler to use a different implementation when building with stage0 than stage1, or we stop using nightly standard library features until they reach beta. See https://rust-lang.zulipchat.com/#narrow/stream/131828-t-compiler/topic/Building.20rustc.20with.20beta.20libstd/near/209899890 for a very (very) long discussion of the tradeoffs here.
+2 is harder. Either we add `cfg(bootstrap)` to the compiler to use a different implementation when building with stage0 than stage1, or we stop using nightly standard library features until they reach beta. See <https://rust-lang.zulipchat.com/#narrow/stream/131828-t-compiler/topic/Building.20rustc.20with.20beta.20libstd/near/209899890> for a very (very) long discussion of the tradeoffs here.
 
 There are some more benefits to supporting a single version not discussed there:
 - Rebasing over master recompiles much less code. Modifying a single line in `core` no longer requires rebuilding the world; only changes to the compiler require the compiler to be rebuilt.
@@ -95,9 +95,9 @@ There are some more benefits to supporting a single version not discussed there:
 
 I've put together some data on how often using those features before they hit beta happens in
 practice, and - at least from 1.61.0 onwards - it appears it *never* happens. See
-https://github.com/jyn514/rust/tree/versions-used for how that data was gathered (run
+<https://github.com/jyn514/rust/tree/versions-used> for how that data was gathered (run
 `./collect_new_versions.sh`). What's more common is renaming a method before it's stable; see
-https://github.com/rust-lang/rust/pull/79805/files for an example. The `cfg(bootstrap)` code to
+<https://github.com/rust-lang/rust/pull/79805/files> for an example. The `cfg(bootstrap)` code to
 handle this in the compiler should be pretty simple.
 
 I've talked to people on both T-libs and T-compiler and they say that removing `cfg(bootstrap)` would be an *enormous* help. Some testimonials:
@@ -188,7 +188,7 @@ I would like to introduce four new flags:
 
 This correspond closely, but not exactly, to `--stage 0/1/2/3` (respectively).
 <!-- TODO: rewrite this diagram to use the new flags instead of `--run-stage` -->
-Here is a conversion guide between the two: https://github.com/rust-lang/rustc-dev-guide/pull/843#issuecomment-684131697.
+Here is a conversion guide between the two: <https://github.com/rust-lang/rustc-dev-guide/pull/843#issuecomment-684131697>.
 I propose *not* putting this in the dev-guide, but creating an inside-rust post which we link to in bootstrap's changelog.
 The idea is for people who've already been using x.py to see the guide, but not people learning the tool for the first time.
 We would keep `--stage` for a time, but eventually deprecate it.
@@ -204,7 +204,7 @@ I want to call out a few interesting properties of these flags:
 - `build --dev-sysroot rustdoc` now matches the sysroot of `build --dev-sysroot compiler` (!). Hopefully we can also do this for clippy and miri.
 
 To make the new flags easier to learn, we can name the sysroots directories after the flags: `build/host/{bootstrap,dev,dist}-sysroot`.
-I have not yet decided if we should introduce a `reproducible-sysroot` or not; see https://github.com/rust-lang/rust/issues/90244#issuecomment-1120649548 for some of the difficulties involved.
+I have not yet decided if we should introduce a `reproducible-sysroot` or not; see <https://github.com/rust-lang/rust/issues/90244#issuecomment-1120649548> for some of the difficulties involved.
 
 ## "Misc breaking changes"
 
@@ -230,7 +230,7 @@ Here are all the proposed changes in this post, gathered in one place:
     - Make sure `download-rustc` doesn't build the compiler from source if there are only library changes; this needs to be careful to still rebuild stage 2 rustc if there are library changes.
 - Rename `build/host/stage{0,1,2}` to `build/host/{bootstrap,dev,dist}-sysroot`.
 - Add `--{bootstrap,dev,dist}-sysroot` flags.
-    - When doing this, clippy and miri will start using the same flags as rustdoc. See https://rust-lang.zulipchat.com/#narrow/stream/326414-t-infra.2Fbootstrap/topic/Stage.20numbering.20for.20tools/near/298189698 for how tool flags are numbered today; after this change, both `build --dev-sysroot rustdoc` and `build --dev-sysroot clippy` will build rustc once, as a library.
+    - When doing this, clippy and miri will start using the same flags as rustdoc. See <https://rust-lang.zulipchat.com/#narrow/stream/326414-t-infra.2Fbootstrap/topic/Stage.20numbering.20for.20tools/near/298189698> for how tool flags are numbered today; after this change, both `build --dev-sysroot rustdoc` and `build --dev-sysroot clippy` will build rustc once, as a library.
 
 That's a lot of breaking changes and a lot of work, for things we are not sure will make the user
 experience easier.  To avoid multiple breaking changes in short succession, I propose making all the
@@ -241,4 +241,4 @@ removing `cfg(bootstrap)` from std, since that requires changes outside of boots
 
 ## Questions? Concerns? Hate mail?
 
-Feel free to contact me (`@jyn`) in https://rust-lang.zulipchat.com/#narrow/stream/326414-t-infra.2Fbootstrap.
+Feel free to contact me (`@jyn`) in <https://rust-lang.zulipchat.com/#narrow/stream/326414-t-infra.2Fbootstrap>.
