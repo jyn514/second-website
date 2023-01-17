@@ -5,9 +5,9 @@
 
 # Site settings, accessible through {{ site.<variable> }}
 lang: "en"
-title: The website of Joshua Nelson
+title: The website of jyn
 email: jyn514@gmail.com
-author: Joshua Nelson
+author: jyn
 description: >- # this means to ignore newlines until "baseurl:"
     This is my personal website, which I made over break on a whim.
     I hope you enjoy!
@@ -29,13 +29,13 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Joshua Nelson"
+      author: "jyn"
       audience: "everyone"
   - scope:
       path: ""
       type: "talks"
     values:
-      author: "Joshua Nelson"
+      author: "jyn"
       audience: "developers"
 
 # Build settings

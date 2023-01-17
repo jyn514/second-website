@@ -45,7 +45,7 @@ Your latest commit probably looks like this:
 ```
 commit 88fdea3dd2e876a92960601c019e729401e832ab (HEAD -> simplify-storage)
 Merge: d6bd3ef8662 6b22a42e011
-Author: Joshua Nelson <github@jyn.dev>
+Author: jyn <github@jyn.dev>
 Date:   Fri Sep 2 19:24:33 2022 -0500
 
     Merge github.com:jyn514/rust into simplify-storage
