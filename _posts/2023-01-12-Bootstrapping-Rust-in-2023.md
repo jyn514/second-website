@@ -102,25 +102,25 @@ handle this in the compiler should be pretty simple.
 
 I've talked to people on both T-libs and T-compiler and they say that removing `cfg(bootstrap)` would be an *enormous* help. Some testimonials:
 
-> [@thomcc]: Yes please. It's a huge headache. It also frequently comes up as a reason not to let the const-eval team experiment with stuff, since we know `~const` is likely going away and don't want to deal with the "lol we `cfg(bootstrap)`ed off all of core::iter".
+> [@thomcc][thom]: Yes please. It's a huge headache. It also frequently comes up as a reason not to let the const-eval team experiment with stuff, since we know `~const` is likely going away and don't want to deal with the "lol we `cfg(bootstrap)`ed off all of core::iter".
 
-[@thomcc]: https://github.com/thomcc
+[thom]: https://github.com/thomcc
 
-> [@fee1-dead]: Working on const traits makes the bootstrap issue very apparent because almost all bugs would be found from attempting to use the feature in the standard library. Fixes for those bugs would need to wait six weeks before finally released as the beta compiler, which slows down development and evolution of the feature.
+> [@fee1-dead][fee1-dead]: Working on const traits makes the bootstrap issue very apparent because almost all bugs would be found from attempting to use the feature in the standard library. Fixes for those bugs would need to wait six weeks before finally released as the beta compiler, which slows down development and evolution of the feature.
 
-[@fee1-dead]: https://github.com/fee1-dead
+[fee1-dead]: https://github.com/fee1-dead
 
-> [@m-ou-se]: Sometimes it gets super messy with all the `cfg(bootstrap)` stuff for things relying on built-in macros or new lang items. Please fix cfg bootstrap hell :D
+> [@m-ou-se][mara]: Sometimes it gets super messy with all the `cfg(bootstrap)` stuff for things relying on built-in macros or new lang items. Please fix cfg bootstrap hell :D
 
-[@m-ou-se]: https://github.com/m-ou-se
+[mara]: https://github.com/m-ou-se
 
-> [@workingjubilee]: Using beta stdlib would make it much easier to experiment outside the compiler/stdlib proper.
+> [@workingjubilee][workingjubilee]: Using beta stdlib would make it much easier to experiment outside the compiler/stdlib proper.
 
-[@workingjubilee]: https://github.com/workingjubilee
+[workingjubilee]: https://github.com/workingjubilee
 
-> [@Nilstrieb]: I'd rather have a few cfgs in the compiler when necessary instead of cfgs in std all the time.
+> [@Nilstrieb][Nilstrieb]: I'd rather have a few cfgs in the compiler when necessary instead of cfgs in std all the time.
 
-[@Nilstrieb]: https://github.com/nilstrieb
+[Nilstrieb]: https://github.com/nilstrieb
 
 #### "But that just moves the cfg(bootstrap) to the compiler!"
 
