@@ -192,7 +192,7 @@ I would like to introduce four new flags:
 
 This correspond closely, but not exactly, to `--stage 0/1/2/3` (respectively).
 <!-- TODO: rewrite this diagram to use the new flags instead of `--run-stage` -->
-Here is a conversion guide between the two: <https://github.com/rust-lang/rustc-dev-guide/pull/843#issuecomment-684131697>.
+Here is a [conversion guide between the two](/assets/bootstrapping.pdf).
 I propose *not* putting this in the dev-guide, but creating an inside-rust post which we link to in bootstrap's changelog.
 The idea is for people who've already been using x.py to see the guide, but not people learning the tool for the first time.
 We would keep `--stage` for a time, but eventually deprecate it.
