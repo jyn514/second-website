@@ -173,7 +173,7 @@ system. Nearly all the people I've talked to who find it confusing are either ne
 or contribute regularly but aren't experts in Rust's build system - even those who are experienced
 in bootstrapping compilers for other languages!
 
-In the words of [@Nilstrieb]:
+In the words of [@Nilstrieb][Nilstrieb]:
 
 > You build a *target*. The focus is always *what* you build.
 
