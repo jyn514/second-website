@@ -16,14 +16,14 @@ Open source is unique in that *energy*, not time or money, is the limiting facto
 
 All other concerns are in some sense secondary; it doesn’t matter if a project has lots of useful features if it’s been abandoned for 4 years and no longer compiles, or if it has no users.
 
-Note that "be kind to your users" is not the same as doing everything they ask for. You can and should say no to features. Being kind is really more simple stuff – don’t be rude in discussions, don’t make breaking changes unless there’s a good reason (there’s tools for this, like cargo-semver-checks!), make it easy for people to submit bug reports and ask questions. If you close an issue as WONTFIX, tell them why; if it's not too much effort, perhaps say the circumstances under which you might change your mind, or give an example of another way to solve their problem.
+Note that "be kind to your users" is not the same as doing everything they ask for. You can and should say no to features. Being kind is really more simple stuff – don’t be rude in discussions, don’t make breaking changes unless there’s a good reason (there’s tools for this, like [cargo-semver-checks]!), make it easy for people to submit bug reports and ask questions. If you close an issue as WONTFIX, tell them why; if it's not too much effort, perhaps say the circumstances under which you might change your mind, or give an example of another way to solve their problem.
 
 ## Balancing priorities
 
 One might notice that all three of those bullets are contradictory: recruiting new maintainers takes energy from existing maintainers; a feature that’s fun for a developer to write may not be useful for users, or vice versa; the more features a project has, the more complicated it gets and the harder it is to onboard new maintainers. Balancing these concerns is the cornerstone of an open source project.
 
 Here are a few concrete examples of how to meet those goals:
-- Automate everything you find boring. CI, releases, updating dependencies, formatting, documentation are all good candidates here. Remember that it’s better to e.g. have a release that’s missing pre-compiled binaries than no release at all. There are many tools that can do this for you; a few examples in the rust ecosystem are Github Actions, cargo-dist, dependabot, rustfmt, and rustdoc.
+- Automate everything you find boring. CI, releases, updating dependencies, formatting, documentation are all good candidates here. Remember that it’s better to e.g. have a release that’s missing pre-compiled binaries than no release at all. There are many tools that can do this for you; a few examples in the rust ecosystem are Github Actions, [cargo-dist], dependabot, rustfmt, and rustdoc.
 - Post about the project frequently on social media or other platforms. This is both a good motivator for you to see what you’ve accomplished and a great way to get other people’s interest, either as users or maintainers. Don’t wait until you have something polished, a half-baked post is better than no post at all. Start a platform dedicated to your project where you can talk with users and contributors; this can be as simple as a Discord server or as complicated as a self-hosted Zulip instance. The important thing is, again, that it should be fun for you to set up.
 - Document how to develop the project, and how to write documentation. The latter pays dividends – not just for recruiting new maintainers, but also for reminding yourself how the project works when you come back from vacation in two weeks. The latter reduces your burden for writing documentation by making it easy for other people to help you write it.
 - Take vacations, even extended vacations. If you know you'll be on vacation ahead of time, be kind to your users or fellow maintainers by telling them you're gone. If you have automated review assignments, set it up to allow people to take breaks.
@@ -47,3 +47,5 @@ I have a lot more to say on this, but most of it has already been said by my fri
 Projects can become self-sustaining rather quickly – you really only need to recruit one or two other people, get five or ten users, and have a decent codebase to expand on. Once you’ve done that, you can mentor your other contributors into taking a leading role, and, eventually, step back from your role as the founder.
 
 [alice-rustconf]: https://www.youtube.com/watch?v=xM7bI2OPPLQ
+[cargo-semver-checks]: https://github.com/obi1kenobi/cargo-semver-checks#cargo-semver-checks
+[cargo-dist]: https://opensource.axo.dev/cargo-dist/
