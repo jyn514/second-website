@@ -5,12 +5,10 @@
 
 # Site settings, accessible through {{ site.<variable> }}
 lang: "en"
-title: The website of jyn
+title: the website of jyn
 email: jyn514@gmail.com
 author: jyn
-description: >- # this means to ignore newlines until "baseurl:"
-    This is my personal website, which I made over break on a whim.
-    I hope you enjoy!
+description: i write about code, and things that bring me joy, and sometimes other things too
 baseurl: ""
 resume: Resume.pdf
 github_username:  jyn514
