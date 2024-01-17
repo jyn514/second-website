@@ -18,8 +18,7 @@ this post is about myself, but it's not just about myself. i'm not going to name
 (i apologize in advance if this story does not match your experience; hopefully the suggestions on what to do about burnout will still be helpful to you.)
 
 the pattern usually goes something like this:
-- you want to work on rust. you go to look at the issue tracker. all the E-easy issues are claimed; all the E-mentor issues are either claimed or ridiculously hard with 40 comments on the issue. at this point we've *already* self-selected for people who are highly driven and independently motivated, because anyone else just gives up.
-- you find something *you* care about, since the easy/mentored issues are taken. it's hard to find a mentor because all the experienced people are overworked and burned out, so you end up doing a lot of the work independently.
+- you want to work on rust. you go to look at the issue tracker. you find something *you* care about, since the easy/mentored issues are taken. it's hard to find a mentor because all the experienced people are overworked and burned out, so you end up doing a lot of the work independently.
 
 guess what you've already learned at this point: work in this project doesn't happen unless *you personally* drive it forward. that issue you fixed was opened for years; the majority of issues you will work on as you start will have been open for months.
 
