@@ -7,8 +7,6 @@ excerpt:
 preview_image: /assets/burned%20out%20rust%20club.png
 ---
 
-# the rust project has a burnout problem
-
 ![a melting, smiling, ferris. it's surrounded by the cursive text "burned out rust kid club".](/assets/burned%20out%20rust%20club.png)
 
 the number of people who have left the rust project due to burnout is shockingly high. the number of people in the project who are close to burnout is also shockingly high.
