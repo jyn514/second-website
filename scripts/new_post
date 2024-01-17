@@ -10,7 +10,7 @@ set -u  # undefined variables are an error
 cd "$(dirname "$(realpath "$0")")/../_posts"
 
 TITLE="$(echo $@ | tr '\t \r' '---' | tr -d '\n!,?:').md"
-TIME="$(date "+%Y-%m-%d %T %z")"
+TIME="$(date "+%Y-%m-%d")"
 FILE="$(date -I)-$TITLE"
 FORMAT="---
 layout:	post
