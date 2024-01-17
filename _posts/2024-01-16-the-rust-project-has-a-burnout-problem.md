@@ -60,6 +60,6 @@ remember:
 
 ### acknowledgements
 
-thank you **@QuietMisdreaus** for the *burned out rust kid club* art.
+thank you **@QuietMisdreavus** for the *burned out rust kid club* art.
 
 thank you **@Gankra**, **@QuietMisdreavus**, **@alercah**, **@ManishEarth**, **@estebank**, **@workingjubilee** and **@yaahc** for discussion and feedback on early drafts of this post. any errors are my own.
